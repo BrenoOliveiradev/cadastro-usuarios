@@ -1,4 +1,5 @@
 import { useRef } from "react"
+import api from "../../services/api"
 
 
 import { Title, Container, TopBackground, Form, ContainerInputs, Input, Button, InputLabel } from "./styles"
@@ -11,8 +12,13 @@ function Home() {
   const inputAge = useRef()
   const inputEmail = useRef()
 
-  function registerNewUser(){
-    console.log(inputName.current.value)
+  async function registerNewUser() {
+    await api.post('/usuarios', {
+      email: inputEmail.current.value,
+      age: parseInt(inputAge.current.value),
+      name: inputName.current.value
+    })
+
 
   }
 
@@ -31,19 +37,19 @@ function Home() {
 
             <div>
               <InputLabel>Nome<span>*</span></InputLabel>
-              <Input type='text' placeholder='Nome do Usuário' ref={inputName}/>
+              <Input type='text' placeholder='Nome do Usuário' ref={inputName} />
             </div>
 
             <div>
               <InputLabel>Idade<span>*</span></InputLabel>
-              <Input type='number' placeholder='Idade do Usuário' ref={inputAge}/>
+              <Input type='number' placeholder='Idade do Usuário' ref={inputAge} />
             </div>
 
           </ContainerInputs>
 
           <div style={{ width: '100%' }}>
             <InputLabel>E-mail<span>*</span></InputLabel>
-            <Input type='email' placeholder='Email do Usuário' ref={inputEmail}/>
+            <Input type='email' placeholder='Email do Usuário' ref={inputEmail} />
           </div>
 
 
