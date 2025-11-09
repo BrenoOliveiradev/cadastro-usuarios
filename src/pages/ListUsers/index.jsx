@@ -8,7 +8,7 @@ function ListUsers() {
             <TopBackground />
             <h1>Listagem de Usuários</h1>
             <Button>Voltar</Button>
-        </div> 
+        </div>
     );
 }
 
