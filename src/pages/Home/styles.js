@@ -12,22 +12,7 @@ export const Container = styled.div`
      height: 100vh;
 `
 
-export const TopBackground = styled.div`
-    background: linear-gradient(to right, #4e54c8, #8f94fb);
-    height: 30vh;
-    width: 90vw;
-    max-width: 600px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    img {
-        max-width: 100%;
-        max-height: 100%;
-       
-    }
-`
 
 export const Form = styled.form`
     display: flex;
@@ -72,25 +57,5 @@ export const InputLabel = styled.label`
     }
 `
 
-export const Button = styled.button`
-    background: linear-gradient(180deg, #4e54c8 0%, #8f94fb 100%);
-    border: none;
-    font-size: 1.2rem;
-    color: #ffffff;
-    padding: 16px 32px;
-    width: fit-content;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: all 0.3s ease-in-out;
 
-    &:hover {
-        opacity: 0.8;
-        transform: translateY(-3px);
-    }
-
-    &:active {
-        opacity: 0.5;
-        transform: translateY(0px);
-    }
- `
 
