@@ -22,13 +22,7 @@ export const Form = styled.form`
     max-width: 500px;
 `
 
-export const Title = styled.h2`
-    color: #ffffff;
-    text-align: center;
-    font-size: 2.3rem;
-    font-style: normal;
-    font-weight: 700;
-`
+
 
 export const ContainerInputs = styled.div`
     display: flex;
