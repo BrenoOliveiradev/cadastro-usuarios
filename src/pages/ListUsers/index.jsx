@@ -20,9 +20,16 @@ function ListUsers() {
 
             setUsers(data)
         }
-        getUsers();
+        getUsers()
 
     }, [])
+
+    async function deleteUser(id) {
+        await api.delete(`/usuarios/${id}`)
+
+        const upadatedUsers = users.filter(user => user.id !== id)
+        setUsers(upadatedUsers)
+    }
 
 
     return (
@@ -33,14 +40,14 @@ function ListUsers() {
             <ContainerUsers>
                 {users.map((user) => (
                     <CardUsers key={user.id}>
-                        <AvatarUser src={`https://avatar.iran.liara.run/public?username=${user.id}`}/>
+                        <AvatarUser src={`https://avatar.iran.liara.run/public?username=${user.id}`} />
                         <div >
                             <h3>{user.name}</h3>
                             <p>{user.age}</p>
                             <p>{user.email}</p>
-                            
+
                         </div>
-                        <TrashIcon src={Trash} alt="icone-de-lixo" />
+                        <TrashIcon src={Trash} alt="icone-de-lixo" onClick={() => deleteUser(user.id)} />
                     </CardUsers>
 
                 ))}

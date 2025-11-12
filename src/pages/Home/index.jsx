@@ -25,6 +25,8 @@ function Home() {
       name: inputName.current.value
     })
 
+    navigate('/lista-de-usuarios')
+
 
   }
 
